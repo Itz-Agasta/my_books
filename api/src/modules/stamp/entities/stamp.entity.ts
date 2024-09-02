@@ -1,9 +1,11 @@
 export class Stamp {}
+import { BookEntity } from 'src/modules/books/entities/book.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -15,6 +17,11 @@ export class StampEntity {
 
   @Column()
   name: string;
+
+  @OneToMany(() => BookEntity, (book) => book.stamp, {
+    cascade: true,
+  })
+  book?: BookEntity[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt?: Date;

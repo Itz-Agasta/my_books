@@ -1,3 +1,4 @@
+import { BookEntity } from "src/modules/books/entities/book.entity";
 import { CollectionEntity } from "src/modules/collections/entities/collection.entity";
 import { DrawerEntity } from "src/modules/drawer/entities/drawer.entity";
 import { PublisherEntity } from "src/modules/publisher/entities/publisher.entity";
@@ -11,5 +12,6 @@ export const entities = [
     DrawerEntity,
     StampEntity,
     CollectionEntity,
-    UserEntity
+    UserEntity,
+    BookEntity
 ];

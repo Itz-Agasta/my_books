@@ -1,8 +1,10 @@
+import { BookEntity } from 'src/modules/books/entities/book.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -14,6 +16,11 @@ export class DrawerEntity {
 
   @Column()
   name: string;
+
+  @OneToMany(() => BookEntity, (book) => book.drawer, {
+    cascade: true,
+  })
+  book?: BookEntity[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt?: Date;
