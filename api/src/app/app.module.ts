@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AuthenticationModule } from 'src/authentication/authentication.module';
+import { BooksModule } from 'src/modules/books/books.module';
 import { CollectionsModule } from 'src/modules/collections/collections.module';
 import { DrawerModule } from 'src/modules/drawer/drawer.module';
 import { PublisherModule } from 'src/modules/publisher/publisher.module';
@@ -18,6 +19,7 @@ import { DatabaseModule } from 'src/providers/database/database.module';
     CollectionsModule,
     AuthenticationModule,
     UsersModule,
+    BooksModule
   ],
 })
 export class AppModule {}
