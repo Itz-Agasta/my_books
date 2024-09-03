@@ -13,7 +13,6 @@ export class BookTypeValidate implements ValidatorConstraintInterface {
   ): boolean {
     const book: BookInterface = Object.assign(validationArguments.object);
     if (book.type === 'book' || book.type === 'HQ') return !!book;
-    console.log(book)
     return !book;
   }
 }
