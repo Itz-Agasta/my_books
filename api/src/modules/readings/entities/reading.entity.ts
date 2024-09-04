@@ -1,8 +1,15 @@
+import { BookEntity } from 'src/modules/books/entities/book.entity';
+import { BookInterface } from 'src/modules/books/interfaces/book.interface';
+import { UserEntity } from 'src/modules/users/entities/user.entity';
+import { UserInterface } from 'src/modules/users/interfaces/user.interface';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -18,10 +25,19 @@ export class ReadingEntity {
   @Column()
   expected_end_date: Date;
 
-//   @OneToMany(() => BookEntity, (book) => book.writer, {
-//     cascade: true,
-//   })
-//   book?: BookEntity[];
+  @Column({ name: 'book_id' })
+  bookId: number;
+
+  @Column({ name: 'user_id' })
+  userId: number;
+
+  @ManyToOne(() => BookEntity)
+  @JoinColumn({ name: 'book_id' })
+  book: BookInterface;
+
+  @ManyToOne(() => UserEntity)
+  @JoinColumn({ name: 'user_id' })
+  user: UserInterface;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt?: Date;

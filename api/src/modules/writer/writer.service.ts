@@ -26,7 +26,10 @@ export class WriterService {
 
   async findOne(id: number): Promise<WriterInterface> {
     try {
-      return await this.writerRepository.findOneOrFail({ where: { id } });
+      return await this.writerRepository.findOneOrFail({ 
+        where: { id }, 
+        relations: ['books']
+      });
     } catch (error) {
       throw new HttpException(
         { message: 'Não foi possível encontrar o autor.' },
@@ -84,6 +87,7 @@ export class WriterService {
       await this.writerRepository.save(entity);
 
       const writer = await this.findOne(id);
+
       return { writer, message: 'o autor foi atualizado com sucesso.' };
     } catch (error) {
       throw new HttpException(
