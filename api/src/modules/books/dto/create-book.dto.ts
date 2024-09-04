@@ -83,8 +83,8 @@ export class CreateBookDto {
     description: 'Id do escritor.',
     default: 0,
   })
-  @IsInt({ message: 'O campo de id do editora precisa ser um número.' })
-  @IsNotEmpty({ message: 'O campo de id do editora é obrigatório.' })
+  @IsInt({ message: 'O campo de id da editora precisa ser um número.' })
+  @IsNotEmpty({ message: 'O campo de id da editora é obrigatório.' })
   publisherId: number;
 
   @ApiProperty({

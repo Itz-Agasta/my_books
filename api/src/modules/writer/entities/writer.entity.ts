@@ -20,7 +20,7 @@ export class WriterEntity {
   @OneToMany(() => BookEntity, (book) => book.writer, {
     cascade: true,
   })
-  book?: BookEntity[];
+  books?: BookEntity[];
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt?: Date;

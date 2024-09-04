@@ -17,6 +17,14 @@ export class AuthenticationService {
     try {
       const user: UserInterface =
         await this.usersService.findUserByEmailLogin(email);
+
+      if (!user) {
+        throw new HttpException(
+          { message: 'Usuário não encontrado' },
+          HttpStatus.BAD_REQUEST,
+        );
+      }
+
       await this.usersService.checkUserPassword(user.id, password);
       return this.makeToken(user);
     } catch (error) {

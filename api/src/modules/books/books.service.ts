@@ -1,3 +1,4 @@
+
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
@@ -62,7 +63,6 @@ export class BooksService {
 
       return { book, message: 'O livro foi criado com sucesso.' };
     } catch (error) {
-      console.log(error)
       throw new HttpException(
         { message: 'Não foi possível criar o livro.' },
         HttpStatus.BAD_REQUEST,

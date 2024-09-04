@@ -22,7 +22,7 @@ export class CreateReadingsTable1725386949379 implements MigrationInterface {
         isNullable: false,
       },
       {
-        name: 'expected_and_date',
+        name: 'expected_end_date',
         type: 'TIMESTAMP',
         isNullable: true,
       },
