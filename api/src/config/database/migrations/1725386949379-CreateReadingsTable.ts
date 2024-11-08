@@ -27,6 +27,12 @@ export class CreateReadingsTable1725386949379 implements MigrationInterface {
         isNullable: true,
       },
       {
+        name: 'finished',
+        type: 'boolean',
+        default: false,
+        isNullable: false,
+      },
+      {
         name: 'book_id',
         type: 'INTEGER',
         isNullable: false,
