@@ -40,12 +40,6 @@ export class CreateBooksTable1724243780516 implements MigrationInterface {
         isNullable: false,
       },
       {
-        name: 'read',
-        type: 'boolean',
-        default: false,
-        isNullable: false,
-      },
-      {
         name: 'writer_id',
         type: 'INTEGER',
         isNullable: false,
