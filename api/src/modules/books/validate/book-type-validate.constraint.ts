@@ -8,7 +8,7 @@ import { BookInterface } from '../interfaces/book.interface';
 @ValidatorConstraint({ name: 'BookTypeValidate', async: true })
 export class BookTypeValidate implements ValidatorConstraintInterface {
   validate(
-    type: string,
+    _: string,
     validationArguments: ValidationArguments,
   ): boolean {
     const book: BookInterface = Object.assign(validationArguments.object);
